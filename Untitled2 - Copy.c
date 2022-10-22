@@ -7,12 +7,13 @@ struct pqueue
 };
 void initiate(struct pqueue*queu)
 {
-    queu->size=-1;
+    queu->size=0;
 }
 void enqueue(struct pqueue*queu,int value)
-{(queu->size)++;
+{
 
     queu->arr[queu->size]=value;
+    (queu->size)++;
      for(int i=0;i<=queu->size;i++)
     {
         int key=queu->arr[i];
@@ -50,4 +51,8 @@ int maxx(struct pqueue*queu)
 int minn(struct pqueue*queu)
 {
     return queu->arr[0];
+}
+int get_size(struct pqueue*queu)
+{
+    return queu->size;
 }
